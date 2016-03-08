@@ -46,20 +46,6 @@ public class Reconocimiento extends Fragment {
     private ProgressBar pg_buscando;
 
 
-    private void openCamera() {
-        File file = new File(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
-        file.mkdirs();
-
-        String path = Environment.getExternalStorageDirectory() + File.separator
-                + MEDIA_DIRECTORY + File.separator + TEMPORAL_PICTURE_NAME;
-
-        File newFile = new File(path);
-
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(newFile));
-        startActivityForResult(intent, PHOTO_CODE);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -115,6 +101,20 @@ public class Reconocimiento extends Fragment {
 
 
         return rootView;
+    }
+
+    private void openCamera() {
+        File file = new File(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
+        file.mkdirs();
+
+        String path = Environment.getExternalStorageDirectory() + File.separator
+                + MEDIA_DIRECTORY + File.separator + TEMPORAL_PICTURE_NAME;
+
+        File newFile = new File(path);
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(newFile));
+        startActivityForResult(intent, PHOTO_CODE);
     }
 
     @Override
@@ -176,7 +176,7 @@ public class Reconocimiento extends Fragment {
             bolsa.putString("nombre", "Papas Fritas");
             verproducto.putExtras(bolsa);
             startActivity(verproducto);
-            Toast.makeText(getActivity(), "Producto Encontrado.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Producto Encotrado.", Toast.LENGTH_LONG).show();
         }
     }
 

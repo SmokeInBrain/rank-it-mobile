@@ -40,8 +40,11 @@ public class VerProducto extends AppCompatActivity {
         if(bolsa.getString("nombre").toLowerCase().equals("coca cola")){
             Drawable myDrawable = getResources().getDrawable(R.drawable.cocacola);
             foto.setImageDrawable(myDrawable);
-        }else if(bolsa.getString("nombre").toLowerCase().equals("papas fritas")){
+        }else if(bolsa.getString("nombre").toLowerCase().equals("papas fritas")) {
             Drawable myDrawable = getResources().getDrawable(R.drawable.papasfritas);
+            foto.setImageDrawable(myDrawable);
+        }else if(bolsa.getString("nombre").toLowerCase().equals("salsa de tomate")){
+            Drawable myDrawable = getResources().getDrawable(R.drawable.salsa);
             foto.setImageDrawable(myDrawable);
         }
 
